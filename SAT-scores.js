@@ -1,6 +1,31 @@
 "use strict";
 
 
+//from https://www.codegrepper.com/code-examples/javascript/how+to+convert+an+array+into+2d+array+based+on+a+condition+in+javascript+
+/*var grid = [];
+let iMax = 3;
+let jMax = 2;
+let count = 0;
+
+    //makes the columns (index)
+    for (let i in iMax) {
+        grid[i] = [];
+
+        //makes the rows (0 and 1 here)
+        for (let j in jMax) {
+            grid[i][j] = count;
+            count++;
+        }
+    }
+
+// grid = [
+//   [ 0, 1 ]
+//   [ 2, 3 ]
+//   [ 4, 5 ]
+// ];
+
+console.table(grid); // 4*/
+
 let scores = 
 `1399, 830 , 706 , 1241, 1440, 1539, 1279, 1168, 1402, 1591 
 1113, 1401, 403 , 513 , 1196, 813 , 1105, 659 , 1533, 1134 
@@ -51,9 +76,13 @@ let scores =
 615 , 1388, 740 , 405 , 1568, 1301, 417 , 748 , 608 , 1473 
 1565, 403 , 767 , 1531, 702 , 671 , 680 , 1156, 920 , 451  
 1598, 1247, 634 , 1556, 1449, 1447, 1365, 1573, 1227, 1205 
-979 , 1031, 597 , 1154, 931 , 1048, 564 , 1506, 407 , 1105
-`
+979 , 1031, 597 , 1154, 931 , 1048, 564 , 1506, 407 , 1105`
+
 scores = scores.split("\n");
+
+let columns = 491;
+let rows = 9;
+
 
 //problem 1
 //You turn to your boss and ask what you should do, nothing like this has ever happened to you before. Your boss tells you that they don’t know either and are going to ask the president of SATs and ACTs. In the meantime they ask you to fix the table for use in the code. You need to:
@@ -61,8 +90,29 @@ scores = scores.split("\n");
 //2. Create a 2D array that is separated into schools for rows and scores for columns. 
 //3. Use console.table to output your data (this is what I want in the answer)
 
+//will seperate them by space. form 9 rows 
+/*for(let i in scores){
+    let num = scores
+    
+    if(num[i] == "/n"){
+        scores.splice(0, 0, ['study', 2]);
+    }
+}*/
+
+/*for (let c in columns) {
+    //makes the rows
+    for (let r in rows) {
+        grid[c][r] = count;
+    }
+}*/
+
+//makes the columns
 for(let i in scores){
-    scores[i]
+    let count = scores[i];
+    if(scores[i] == "\n"){
+        //is what makes the rows
+        scores[c][r] = count
+    }
 }
 
 console.table(scores);
