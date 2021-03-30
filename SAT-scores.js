@@ -76,12 +76,15 @@ for(let i in scores){
 //Code that might help:
 //array.sort()  -  array.push()  -  array.length  -  Math.miin()  -  Math.max()
 //for(let i in scores){
-    let sortedRow = scores.sort();
+    function sortNumbers(a, b){
+        return a - b;
+    }
+    let sortedRow = scores.sort(sortNumbers);
     let least = Math.min(sortedRow[0]);
-    //let most = Math.max(scores[0]);
-    console.table(scores)
+    let most = Math.max(scores[0]);
+    console.table(sortedRow[0])
     console.log(least)
-    //console.log(biggestScore)
+    console.log(most)
 //}
 
 
