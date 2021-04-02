@@ -62,7 +62,6 @@ scores = scores.split("\n");
 //3. Use console.table to output your data (this is what I want in the answer)
 for(let i in scores){
     scores[i] = scores[i].split(',')
-    //scores[i] = scores[i].trim('')
 }
 
 
@@ -91,6 +90,12 @@ for(let i in scores){
 function addNumbers(){
     
 }
+
+
+//That’s not going to do the trick, as you are working you realize that the boss likely meant to find the average at each school. Find the average of every school and add those values together, round you final answer to the nearest 2 decimal places (10.25).
+//Code that might help:
+//number.toFixed()
+
 
 
 //console.table(scores);
