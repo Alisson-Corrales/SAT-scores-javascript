@@ -63,7 +63,7 @@ scores = scores.split("\n");
 for(let i in scores){
     scores[i] = scores[i].split(',')
 }
-
+//console.table(scores)
 
 //·͙*̩̩͙˚̩̥̩̥*̩̩̥͙　✩　*̩̩̥͙˚̩̥̩̥*̩̩͙‧͙ 　　.·͙*̩̩͙˚̩̥̩̥*̩̩̥͙　✩　*̩̩̥͙˚̩̥̩̥*̩̩͙‧͙ .
 
@@ -73,27 +73,31 @@ for(let i in scores){
 //1. Add those differences together
 //2. Submit that, an easier way to check if you have the right answer.
 //Code that might help:
-//array.sort()  -  array.push()  -  array.length  -  Math.miin()  -  Math.max()
-//for(let i in scores){
-    function sortNumbers(a, b){
-        return a - b;
+//array.sort()  -  array.push()  -  array.length  -  Math.min()  -  Math.max()
+
+    //let sortedRow = scores.sort(sortNumbers);
+    let sortedRow = [];
+    for(let i = 0; i < 50 ; i++){
+        //function subtracts b from a
+        sortedRow = scores[i].sort((a, b)=> a - b)
+                    //this entire function makes it so .sort sorts numbers not string
+                    //ends function execution and returns the diference of a and b
+
+        //this makes a new array, and each thing in the array becomes a number
+        sortedRow = sortedRow.map(i=>Number(i))
     }
-    let sortedRow = scores.sort(sortNumbers);
-    let least = Math.min(sortedRow[0]);
-    let most = Math.max(scores[0]);
-    console.table(sortedRow[0])
-    console.log(least[0])
-    console.log(most[0])
-//}
-
-
-function addNumbers(){
     
-}
+    let least = sortedRow[0];
+    let most = sortedRow[9];
+    
+    let answer = most - least;
+
+    console.log(answer)
+
 
 
 //problem 3
-//That’s not going to do the trick, as you are working you realize that the boss likely meant to find the average at each school. Find the average of every school and add those values together, round you final answer to the nearest 2 decimal places (10.25).
+//That’s not going to do the trick, as you are working you realize that the boss likely meant to find the average at each school. Find the average of every school and add those values together, round your final answer to the nearest 2 decimal places (10.25).
 //Code that might help:
 //number.toFixed()
 
