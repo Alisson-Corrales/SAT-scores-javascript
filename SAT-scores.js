@@ -82,8 +82,8 @@ for(let i in scores){
     let least = Math.min(sortedRow[0]);
     let most = Math.max(scores[0]);
     console.table(sortedRow[0])
-    console.log(least)
-    console.log(most)
+    console.log(least[0])
+    console.log(most[0])
 //}
 
 
@@ -92,6 +92,7 @@ function addNumbers(){
 }
 
 
+//problem 3
 //That’s not going to do the trick, as you are working you realize that the boss likely meant to find the average at each school. Find the average of every school and add those values together, round you final answer to the nearest 2 decimal places (10.25).
 //Code that might help:
 //number.toFixed()
