@@ -92,11 +92,10 @@ for(let i in scores){
         //console.table(rows)
 
         //this subtracts the largest score w/ the smallest one
-        let least = sortedRow[0];
-        let most = sortedRow[9];
+        let least = Math.min(...sortedRow);
+        let most = Math.max(...sortedRow);
         
         let answer = most - least;
-
         //console.log(answer)
     }
 
@@ -110,18 +109,30 @@ for(let i in scores){
 //Code that might help:
 //number.toFixed()
 
+let sortedRow = [];
+let rows = [];
 for(let i = 0; i < 50 ; i++){
     //function returns a subtracted by b, which would sort it from least to most
     sortedRow = scores[i].sort((a, b)=> a - b)
                 //this entire function makes it so .sort sorts numbers not string
-                //ends function execution and returns the diference of a and b
     //this makes a new array, and each item in the array becomes a number
     rows = sortedRow.map(i=>Number(i))
 
-    //.reduce makes everything into a single value
-    
+    //WET but it works
+    let one = rows[0];
+    let two = rows[1];
+    let three = rows[2];
+    let four = rows[3];
+    let five = rows[4];
+    let six = rows[5]; 
+    let seven = rows[6]; 
+    let eight = rows[7]; 
+    let nine = rows[8]; 
+    let ten = rows[9];
 
-    console.table(rows)
+    let sum = one + two + three + four + five + six + seven + eight + nine + ten;
+
+    let average = Math.ceil(sum/10)
+
+    console.log(average)
 }
-
-//console.table(scores)
