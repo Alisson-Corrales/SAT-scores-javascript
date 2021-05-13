@@ -65,6 +65,7 @@ for(let i in scores){
 }
 //console.table(scores)
 
+
 //·͙*̩̩͙˚̩̥̩̥*̩̩̥͙　✩　*̩̩̥͙˚̩̥̩̥*̩̩͙‧͙ 　　.·͙*̩̩͙˚̩̥̩̥*̩̩̥͙　✩　*̩̩̥͙˚̩̥̩̥*̩̩͙‧͙ .
 
 
@@ -77,22 +78,30 @@ for(let i in scores){
 
     //let sortedRow = scores.sort(sortNumbers);
     let sortedRow = [];
+    let rows = [];
     for(let i = 0; i < 50 ; i++){
-        //function subtracts b from a
+        //function returns a subtracted by b, which would sort it from least to most
         sortedRow = scores[i].sort((a, b)=> a - b)
                     //this entire function makes it so .sort sorts numbers not string
                     //ends function execution and returns the diference of a and b
 
-        //this makes a new array, and each thing in the array becomes a number
-        sortedRow = sortedRow.map(i=>Number(i))
-    }
-    
-    let least = sortedRow[0];
-    let most = sortedRow[9];
-    
-    let answer = most - least;
+        //this makes a new array, and each item in the array becomes a number
+        rows = sortedRow.map(i=>Number(i))
 
-    console.log(answer)
+        //adding the console.table here made it so the terminal outputs ALL the organized arrays (which shows this works 100%)
+        //console.table(rows)
+
+        //this subtracts the largest score w/ the smallest one
+        let least = sortedRow[0];
+        let most = sortedRow[9];
+        
+        let answer = most - least;
+
+        //console.log(answer)
+    }
+
+
+    //·͙*̩̩͙˚̩̥̩̥*̩̩̥͙　✩　*̩̩̥͙˚̩̥̩̥*̩̩͙‧͙ 　　.·͙*̩̩͙˚̩̥̩̥*̩̩̥͙　✩　*̩̩̥͙˚̩̥̩̥*̩̩͙‧͙ .
 
 
 
@@ -101,6 +110,18 @@ for(let i in scores){
 //Code that might help:
 //number.toFixed()
 
+for(let i = 0; i < 50 ; i++){
+    //function returns a subtracted by b, which would sort it from least to most
+    sortedRow = scores[i].sort((a, b)=> a - b)
+                //this entire function makes it so .sort sorts numbers not string
+                //ends function execution and returns the diference of a and b
+    //this makes a new array, and each item in the array becomes a number
+    rows = sortedRow.map(i=>Number(i))
 
+    //.reduce makes everything into a single value
+    
 
-//console.table(scores);
+    console.table(rows)
+}
+
+//console.table(scores)
